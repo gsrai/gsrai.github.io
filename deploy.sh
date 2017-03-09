@@ -1,14 +1,16 @@
 #!/bin/sh
 
-rm -rf target
-mkdir target
+rm -rf .build
+mkdir .build
 
 lein clean
+lein deps
 lein cljsbuild once prod
 
-mv resources/public/ target/
+cp -r resources/public/* .build/
 lein clean
 git checkout master
+cp -R .build/* .
 git add --all
-git commit -m "deployed build target"
+git commit -m "deployed release candidate"
 git push origin master
