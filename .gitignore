@@ -4,3 +4,4 @@ test/cljs
 resources/public/js/dev
 .repl
 .nrepl-port
+node_modules

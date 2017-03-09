@@ -1,6 +1,6 @@
 (defproject personal-website "0.1.0-SNAPSHOT"
   :description "personal website (portfolio, blog etc)"
-  :url "http://gsrai.github.io"
+  :url "https://gsrai.github.io"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.456"]
                  [reagent "0.6.0"]]
@@ -26,7 +26,7 @@
                 :source-paths ["src"] 
                 :compiler 
                   {:optimizations :advanced
-                   :output-to "resources/public/js/app.js" 
+                   :output-to "resources/public/js/main.js" 
                    :pretty-print false 
                    :verbose true}}]} 
                    
@@ -34,5 +34,5 @@
         :url "https://github.com/gsrai/gsrai.github.io"}
   
   :source-paths ["src"]
-  :clean-targets ^{:protect false} ["resources/public/js/" "release"] 
+  :clean-targets ^{:protect false} ["resources/public/js/"] 
   :target-paths ["resources/public/js/%s"])
