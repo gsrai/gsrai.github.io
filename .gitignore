@@ -1,0 +1,8 @@
+.DS_Store
+target
+test/cljs
+resources/public/js/dev
+.build
+.repl
+.nrepl-port
+node_modules
