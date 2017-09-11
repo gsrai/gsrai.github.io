@@ -3,12 +3,9 @@
 rm -rf .build
 mkdir .build
 
-lein clean
-lein deps
-lein cljsbuild once prod
+webpack -p
 
 cp -r resources/public/* .build/
-lein clean
 git checkout master
 cp -R .build/* .
 git add --all
