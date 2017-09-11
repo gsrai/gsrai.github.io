@@ -2,6 +2,7 @@
 target
 test/cljs
 resources/public/js/dev
+resources/public/js
 .build
 .repl
 .nrepl-port

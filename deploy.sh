@@ -3,12 +3,11 @@
 rm -rf .build
 mkdir .build
 
-lein clean
-lein deps
-lein cljsbuild once prod
+rm resources/public/js/main.min.js
+webpack -p
 
 cp -r resources/public/* .build/
-lein clean
+rm resources/public/js/main.min.js
 git checkout master
 cp -R .build/* .
 git add --all
