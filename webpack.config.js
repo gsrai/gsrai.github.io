@@ -33,6 +33,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/resources/public/js",
+    publicPath: "/js/",
     filename: "main.min.js"
   },
   plugins: debug ? [] : [

@@ -1,1 +1,165 @@
 /* style.css */
+body {
+  font-family: "Helvetica";
+}
+
+.footer {
+  text-align: center;
+  vertical-align: middle;
+}
+
+nav {
+  width: 50%;
+  display: inline-block;
+  margin-top: 21px;  
+  margin-bottom: 21px;
+  height: 38.4px;
+}
+
+header {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+header > h1 {
+  width: 50%;
+  display: inline-block;
+  margin-top: 21px;  
+  margin-bottom: 21px;
+  padding-top: 7px;
+  text-align: center;
+  vertical-align: top;
+}
+
+nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+  height: 38.4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+nav a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav a:hover {
+  background-color: black;
+  color: white;
+}
+
+.active {
+  border-bottom: 3px solid black;
+}
+
+nav li:last-child {
+  border-right: none;
+}
+
+.project-tile-container {
+  border: 1px solid black;
+  width: 49%;
+  height: 300px;
+  border-radius: 2px;
+  margin: 2px;
+  display: inline-block;
+}
+
+.project-tile-container img {
+  width: 100%;
+  height: 50%;
+  background-color: black;
+}
+
+.project-tile-info {
+  width: 100%;
+  height: 50%;
+}
+
+.project-tile-info h4 {
+  margin: 4px;
+}
+
+.project-tile-info p {
+  margin: 4px;
+}
+
+.project-tile-info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-tile-info li {
+  float: left;
+  padding-right: 2px;
+  margin-left: 4px;
+}
+
+.project-tile-title {
+  height: 20%;
+}
+
+.project-tile-desc {
+  height: 50%;
+}
+
+.project-tile-links {
+  height: 30%;
+}
+
+.main-content {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+
+@media only screen and (max-width : 320px) {
+  /* Styles */
+  .project-tile-container {
+    width: 100%;
+  }
+
+  .main-content {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+
+  header > h1 {
+    display: inline-block;
+    text-align: center;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 2px;
+  }
+
+  header {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  nav {
+    width: 90%;
+    display: block;
+    margin-top: 0px;  
+    margin-bottom: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}

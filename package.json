@@ -37,7 +37,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base resources/public/ --inline --hot",
     "lint": "./node_modules/.bin/eslint src/**/*.js && ./node_modules/.bin/eslint test/**/*.js",
     "test:mocha": "mocha-webpack --webpack-config webpack.config-test.babel.js \"test/**/*.test.js\" || true",
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
