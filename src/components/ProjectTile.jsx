@@ -15,7 +15,6 @@ export default class ProjectTile extends React.Component {
   render() {
     return (
       <div className={'project-tile-container'}>
-        <img src="" alt="some image"/>
         <div className={'project-tile-info'}>
           <div className={'project-tile-title'}>
             <h4>{this.props.title}</h4>
@@ -29,6 +28,7 @@ export default class ProjectTile extends React.Component {
             </ul>
           </div>
         </div>
+        <img src={this.props.imgsrc} />
       </div>
     );
   }
@@ -38,6 +38,7 @@ export default class ProjectTile extends React.Component {
 ProjectTile.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  imgsrc: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(PropTypes.shape({
     href: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
