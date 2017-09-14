@@ -1,42 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  onProjectClick = (e) => {
-    e.preventDefault();
-    this.props.onNavChange('projects');
-  }
-
-  onAboutClick = (e) => {
-    e.preventDefault();
-    this.props.onNavChange('about');
-  }
-
-  onBlogClick = (e) => {
-    e.preventDefault();
-    this.props.onNavChange('blog');
-  }
+  getPath = () => window.location.hash.slice(2);
 
   render() {
-    const activeTab = this.props.tabName;
+    const activeTab = this.getPath();
     return (
       <div>
         <header>
           <h1>Gagondeep Srai</h1>
           <nav>
             <ul>
-              <li className={activeTab === 'projects' ? 'active': ''}>
-                <a href="#" onClick={this.onProjectClick} >Projects</a>
+              <li className={activeTab === '' ? 'active': ''}>
+                <Link to="/">Projects</Link>
               </li>
               <li className={activeTab === 'about' ? 'active': ''}>
-                <a href="#" onClick={this.onAboutClick}>About</a>
+                <Link to="about">About</Link>
               </li>
               <li className={activeTab === 'blog' ? 'active': ''}>
-                <a href="#" onClick={this.onBlogClick}>Blog</a>
+                <Link to="blog">Blog</Link>
               </li>
             </ul>
           </nav>
@@ -44,10 +31,4 @@ export default class Header extends React.Component {
       </div>
     );
   }
-
 }
-
-Header.propTypes = {
-  tabName: PropTypes.string.isRequired,
-  onNavChange: PropTypes.func.isRequired
-};

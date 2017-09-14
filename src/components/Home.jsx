@@ -1,14 +1,16 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import ProjectsContainer from './ProjectsContainer.jsx';
 import About from './About.jsx';
+import Blog from './Blog.jsx';
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: 'projects',
       projectsModel: {
         projects: [
           {
@@ -78,32 +80,18 @@ export default class Home extends React.Component {
     };
   }
 
-  navigationCallback = (newTab) => {
-    this.setState({
-      currentTab: newTab
-    });
-  }
-
-  renderMain = () => {
-    const { currentTab, projectsModel, aboutModel }  = this.state;
-    switch(currentTab) {
-      case 'projects':
-        return(<ProjectsContainer projectsModel={projectsModel} />);
-      case 'about':
-        return(<About {...aboutModel} />);
-      case 'blog':
-        return(<h2>In Development</h2>);
-      default:
-        return(<p>Oops something went wrong!</p>);
-    }
-  }
-
   render() {
+    const { projectsModel, aboutModel }  = this.state;
     return (
       <div>
-        <Header tabName={this.state.currentTab}
-                onNavChange={this.navigationCallback.bind(this)} />
-        {this.renderMain()}
+        <Header />
+        <Route exact={true} path="/" render={() => {
+          return (<ProjectsContainer projectsModel={projectsModel} />);
+        }}></Route>
+        <Route exact path="/about" render={() => {
+          return (<About {...aboutModel} />);
+        }}></Route>
+        <Route exact path="/blog" component={Blog}></Route>
         <Footer />
       </div>
     );
