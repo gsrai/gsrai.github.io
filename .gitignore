@@ -7,3 +7,5 @@ resources/public/js
 .repl
 .nrepl-port
 node_modules
+coverage
+dist
