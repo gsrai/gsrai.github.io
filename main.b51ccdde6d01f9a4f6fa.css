@@ -6,6 +6,12 @@
 header > h2 {
   margin: 0;
 }
+
+@media only screen and (max-width : 420px) {
+  header > h2 {
+    font-size: 2.5em;
+  }
+}
 footer {
   text-align: center;
   margin-top: 1.5rem;
@@ -103,9 +109,8 @@ footer {
   margin: 0 auto;
 }
 body {
-  margin: 1rem;
-  min-width: 400px;
   background-color: whitesmoke;
+  margin: 1rem;
 }
 
 .to-top {
@@ -128,3 +133,8 @@ body {
   border-bottom-left-radius: 185px 190px;
 }
 
+@media only screen and (max-width : 420px) {
+  body {
+    margin: 0;
+  }
+}
