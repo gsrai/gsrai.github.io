@@ -1,15 +1,16 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { hot } from 'react-hot-loader'
 
-import Header from './Header'
-import Footer from './Footer'
-import ProjectsContainer from './ProjectsContainer'
-import About from './About'
-import Blog from './Blog'
+import Header from '../Header'
+import Footer from '../Footer'
+import ProjectsContainer from '../ProjectsContainer'
+import About from '../About'
+import Blog from '../Blog'
 
 import './home.css'
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -99,3 +100,5 @@ export default class Home extends React.Component {
     )
   }
 }
+
+export default hot(module)(Home)

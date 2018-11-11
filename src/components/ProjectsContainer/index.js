@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectTile from './ProjectTile'
+import ProjectTile from '../ProjectTile'
 import PropTypes from 'prop-types'
 
 export default class ProjectsContainer extends React.Component {
