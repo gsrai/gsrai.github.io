@@ -1,10 +1,11 @@
 body {
   margin: 1rem;
-  min-width: 470px;
+  min-width: 400px;
   background-color: whitesmoke;
 }
 
 .to-top {
+  z-index: 100;
   opacity: 1;
   display: inline-block;
   padding: 1em;
@@ -14,6 +15,7 @@ body {
 }
 
 .to-top .paper-btn {
+  z-index: 999;
   padding: .6em 1em;
   background: #fff;
   border-top-left-radius: 185px 160px;
