@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  margin: 1rem;
 }
 
 .to-top {
@@ -20,4 +21,10 @@ body {
   border-top-right-radius: 200px 195px;
   border-bottom-right-radius: 160px 195px;
   border-bottom-left-radius: 185px 190px;
+}
+
+@media only screen and (max-width : 420px) {
+  body {
+    margin: 0;
+  }
 }

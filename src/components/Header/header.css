@@ -6,3 +6,9 @@
 header > h2 {
   margin: 0;
 }
+
+@media only screen and (max-width : 420px) {
+  header > h2 {
+    font-size: 2.5em;
+  }
+}
