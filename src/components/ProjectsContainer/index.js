@@ -2,6 +2,8 @@ import React from 'react'
 import ProjectTile from '../ProjectTile'
 import PropTypes from 'prop-types'
 
+import './projectsContainer.css'
+
 export default class ProjectsContainer extends React.Component {
   createProjectsView = (model) => {
     return model.projects.map((project, id) => {

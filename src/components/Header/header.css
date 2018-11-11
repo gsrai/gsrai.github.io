@@ -1,0 +1,8 @@
+.center-nav {
+  top: 0;
+  position: fixed;
+}
+
+header > h2 {
+  margin: 0;
+}

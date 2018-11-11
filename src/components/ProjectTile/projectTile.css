@@ -1,0 +1,8 @@
+.card > img {
+  max-height: 500px;
+}
+
+.project-links {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}

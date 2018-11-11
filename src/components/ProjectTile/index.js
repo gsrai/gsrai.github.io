@@ -1,30 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './projectTile.css'
+
 export default class ProjectTile extends React.Component {
   createList = (items) => {
     return items.map((i, id) => {
-      return (<li key={id}><a href={i.href}>{i.title}</a></li>)
+      return (<a key={id} href={i.href} className='paper-btn margin '>{i.title}</a>)
     })
   }
 
   render() {
     return (
-      <div className={'project-tile-container'}>
-        <div className={'project-tile-info'}>
-          <div className={'project-tile-title'}>
-            <h4>{this.props.title}</h4>
-          </div>
-          <div className={'project-tile-desc'}>
-            <p>{this.props.description}</p>
-          </div>
-          <div className={'project-tile-links'}>
-            <ul>
-              {this.createList(this.props.links)}
-            </ul>
-          </div>
+      <div className='card' style={{ width: '20rem', marginBottom: '2rem' }}>
+        <img src={this.props.imgsrc} alt={this.props.title} title={this.props.title} />
+        <div className='card-body'>
+          <h4 className='card-title'>{this.props.title}</h4>
+          <p className='card-text project-desc'>{this.props.description}</p>
+          <div className='project-links'>{this.createList(this.props.links)}</div>
         </div>
-        <img src={this.props.imgsrc} />
       </div>
     )
   }

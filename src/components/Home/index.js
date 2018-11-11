@@ -14,6 +14,10 @@ import './home.css'
 class Home extends React.Component {
   constructor(props) {
     super(props)
+    const now = new Date()
+    const dob = new Date(775699200000)
+    const age = now.getFullYear() - dob.getFullYear()
+
     this.state = {
       projectsModel: {
         projects: [
@@ -77,7 +81,7 @@ class Home extends React.Component {
       },
       aboutModel: {
         name: 'Gagondeep Srai',
-        age: '23 Years old',
+        age,
         occupation: 'Software Developer',
         location: 'London, UK'
       }
@@ -87,17 +91,22 @@ class Home extends React.Component {
   render() {
     const { projectsModel, aboutModel } = this.state
     return (
-      <ErrorBoundary>
-        <Header />
-        <Route exact path='/' render={() => {
-          return (<ProjectsContainer projectsModel={projectsModel} />)
-        }} />
-        <Route exact path='/about' render={() => {
-          return (<About {...aboutModel} />)
-        }} />
-        <Route exact path='/blog' component={Blog} />
-        <Footer />
-      </ErrorBoundary>
+      <div className='paper'>
+        <ErrorBoundary>
+          <Header />
+          <div className='to-top'>
+            <a href='#app-root' className='paper-btn margin'>^</a>
+          </div>
+          <Route exact path='/' render={() => {
+            return (<ProjectsContainer projectsModel={projectsModel} />)
+          }} />
+          <Route exact path='/about' render={() => {
+            return (<About {...aboutModel} />)
+          }} />
+          <Route exact path='/blog' component={Blog} />
+          <Footer />
+        </ErrorBoundary>
+      </div>
     )
   }
 }
