@@ -5,12 +5,10 @@ My Personal Website
 ## development ##
 
 `source` is the dev branch, master is only used for deployment
-as github pages uses the `master` branch as source.
+as github pages serves the `master` branch.
 
 ### todo ###
 
-- remove resources and just have public or dist
-- update react and other deps using new boilerplate
 - use paper css and update about and footer
 - postcss?
 - build blog and use dist/assets/posts to store md blog posts
@@ -20,8 +18,6 @@ as github pages uses the `master` branch as source.
 ### Requirements ###
 
 - node.js v9.11 or higher
-
-***
 
 ### Usage ###
 
@@ -40,8 +36,8 @@ Step 3: Open the browser @ http://localhost:8080
 #### Production ####
 
 Because I am using github pages to host the app, deployment to production is slightly awkward and different.
-There is a Deploy script that will build the app and copy it to a hidden folder (`.build`). It will then checkout
-master and override the contents with the contents of `.build` and commit + push.
+There is a Deploy script that will build the app, it will then checkout master and override the contents
+with the contents of `dist` and commit + push.
 
 Step 1: Install dependencies
 
@@ -49,7 +45,7 @@ Step 1: Install dependencies
 
 Step 2: Build and Deploy
 
-```./deply.sh```
+```./deploy.sh```
 
 #### Testing, Linting and Git ####
 
