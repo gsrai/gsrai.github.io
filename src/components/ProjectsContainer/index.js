@@ -17,11 +17,9 @@ export default class ProjectsContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <main className={'main-content'}>
-          {this.createProjectsView(this.props.projectsModel)}
-        </main>
-      </div>
+      <main className={'main-content'}>
+        {this.createProjectsView(this.props.projectsModel)}
+      </main>
     )
   }
 }

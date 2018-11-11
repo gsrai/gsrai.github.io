@@ -7,7 +7,7 @@ export default class Header extends React.Component {
   render() {
     const activeTab = this.getPath()
     return (
-      <div>
+      <React.Fragment>
         <header>
           <h1>Gagondeep Srai</h1>
           <nav>
@@ -24,7 +24,7 @@ export default class Header extends React.Component {
             </ul>
           </nav>
         </header>
-      </div>
+      </React.Fragment>
     )
   }
 }

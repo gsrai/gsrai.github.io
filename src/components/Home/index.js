@@ -7,6 +7,7 @@ import Footer from '../Footer'
 import ProjectsContainer from '../ProjectsContainer'
 import About from '../About'
 import Blog from '../Blog'
+import ErrorBoundary from '../../utils/ErrorBoundary'
 
 import './home.css'
 
@@ -86,7 +87,7 @@ class Home extends React.Component {
   render() {
     const { projectsModel, aboutModel } = this.state
     return (
-      <div>
+      <ErrorBoundary>
         <Header />
         <Route exact path='/' render={() => {
           return (<ProjectsContainer projectsModel={projectsModel} />)
@@ -96,7 +97,7 @@ class Home extends React.Component {
         }} />
         <Route exact path='/blog' component={Blog} />
         <Footer />
-      </div>
+      </ErrorBoundary>
     )
   }
 }
