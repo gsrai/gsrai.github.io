@@ -27,6 +27,12 @@ const webpackConfig = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.js$|jsx/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+      {
         test: /\.js$|jsx/,
         exclude: /node_modules/,
         loader: 'babel-loader'
@@ -71,10 +77,10 @@ const webpackConfig = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist/*.js', 'dist/*.css']),
     new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, './src/entry/index.html'),
-      filename: path.resolve(__dirname, './dist/index.html')
+      template: './src/entry/index.html',
+      filename: './index.html'
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()

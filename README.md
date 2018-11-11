@@ -12,6 +12,7 @@ as github pages uses the `master` branch as source.
 - remove resources and just have public or dist
 - update react and other deps using new boilerplate
 - use paper css and update about and footer
+- postcss?
 - build blog and use dist/assets/posts to store md blog posts
 
 ***
@@ -38,13 +39,17 @@ Step 3: Open the browser @ http://localhost:8080
 
 #### Production ####
 
-Step 1: Install dependencies and Build
+Because I am using github pages to host the app, deployment to production is slightly awkward and different.
+There is a Deploy script that will build the app and copy it to a hidden folder (`.build`). It will then checkout
+master and override the contents with the contents of `.build` and commit + push.
 
-```npm i && npm run build```
+Step 1: Install dependencies
 
-Step 2.a: Start the app
+```npm i```
 
-```npm run start```
+Step 2: Build and Deploy
+
+```./deply.sh```
 
 #### Testing, Linting and Git ####
 

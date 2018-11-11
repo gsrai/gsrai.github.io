@@ -1,15 +1,17 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react'
+import { Route } from 'react-router-dom'
 
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
-import ProjectsContainer from './ProjectsContainer.jsx';
-import About from './About.jsx';
-import Blog from './Blog.jsx';
+import Header from './Header'
+import Footer from './Footer'
+import ProjectsContainer from './ProjectsContainer'
+import About from './About'
+import Blog from './Blog'
+
+import './home.css'
 
 export default class Home extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       projectsModel: {
         projects: [
@@ -77,23 +79,23 @@ export default class Home extends React.Component {
         occupation: 'Software Developer',
         location: 'London, UK'
       }
-    };
+    }
   }
 
   render() {
-    const { projectsModel, aboutModel }  = this.state;
+    const { projectsModel, aboutModel } = this.state
     return (
       <div>
         <Header />
-        <Route exact={true} path="/" render={() => {
-          return (<ProjectsContainer projectsModel={projectsModel} />);
-        }}></Route>
-        <Route exact path="/about" render={() => {
-          return (<About {...aboutModel} />);
-        }}></Route>
-        <Route exact path="/blog" component={Blog}></Route>
+        <Route exact path='/' render={() => {
+          return (<ProjectsContainer projectsModel={projectsModel} />)
+        }} />
+        <Route exact path='/about' render={() => {
+          return (<About {...aboutModel} />)
+        }} />
+        <Route exact path='/blog' component={Blog} />
         <Footer />
       </div>
-    );
+    )
   }
 }

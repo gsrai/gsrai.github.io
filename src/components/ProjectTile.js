@@ -1,15 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class ProjectTile extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   createList = (items) => {
     return items.map((i, id) => {
-      return (<li key={id}><a href={i.href}>{i.title}</a></li>);
-    });
+      return (<li key={id}><a href={i.href}>{i.title}</a></li>)
+    })
   }
 
   render() {
@@ -30,9 +26,8 @@ export default class ProjectTile extends React.Component {
         </div>
         <img src={this.props.imgsrc} />
       </div>
-    );
+    )
   }
-
 }
 
 ProjectTile.propTypes = {
@@ -43,4 +38,4 @@ ProjectTile.propTypes = {
     href: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   }))
-};
+}

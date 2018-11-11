@@ -2,9 +2,7 @@
   "name": "gsrai.github.io",
   "version": "2.0.0",
   "description": "Personal Website hosted on github.",
-  "main": "webpack.config.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
     "dev": "webpack-dev-server --mode development",
     "build": "webpack -p --config webpack.config.prod.js",
     "test": "rm -rf coverage; jest --coverage --config=jest.config.json",
@@ -36,7 +34,8 @@
   "eslintConfig": {
     "extends": [
       "standard",
-      "standard-react"
+      "standard-react",
+      "plugin:react/recommended"
     ],
     "rules": {
       "space-before-function-paren": [
@@ -49,10 +48,24 @@
       ]
     },
     "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
     "env": {
       "jest": true,
       "browser": true,
       "node": true
+    },
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "16.2"
+      },
+      "propWrapperFunctions": [
+        "forbidExtraProps"
+      ]
     }
   },
   "eslintIgnore": [

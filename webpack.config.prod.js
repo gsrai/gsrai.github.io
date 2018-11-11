@@ -11,7 +11,7 @@ const webpackConfig = {
   entry: ENTRY,
   output: {
     path: DIST,
-    filename: '[name].bundle.js'
+    filename: '[name].[hash].bundle.js'
   },
   externals: {
     'react': 'React',
@@ -19,6 +19,12 @@ const webpackConfig = {
   },
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.js$|jsx/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
       {
         test: /\.js$|jsx/,
         exclude: /node_modules/,
@@ -35,12 +41,18 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        use: [ MiniCssExtractPlugin.loader, 'css-loader' ]
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: DIST }
+          },
+          'css-loader'
+        ]
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist/*.js', 'dist/*.css']),
     new HtmlWebPackPlugin({
       template: './src/entry/index.html',
       filename: './index.html'
