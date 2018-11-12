@@ -19,7 +19,7 @@
   "author": "Gagondeep Srai",
   "license": "UNLICENSED",
   "private": true,
-  "homepage": "https://github.com/gsrai/gsrai.github.io#readme",
+  "homepage": "https://github.com/gsrai/gsrai.github.io",
   "babel": {
     "presets": [
       "env",

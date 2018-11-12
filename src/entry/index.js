@@ -7,7 +7,7 @@ const appRoot = document.getElementById('app-root')
 
 const main = () => {
   render(
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Home />
     </Router>,
     appRoot
