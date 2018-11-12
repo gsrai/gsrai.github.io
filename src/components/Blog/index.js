@@ -5,12 +5,17 @@ import { Link } from 'react-router-dom'
 class Blog extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { posts: null }
+    this.state = { posts: null, error: false }
   }
 
   async componentWillMount() {
-    const posts = await this.getPosts()
-    this.setState({ posts })
+    try {
+      const posts = await this.getPosts()
+      this.setState({ posts })
+    } catch (e) {
+      console.error(e)
+      this.setState({ error: true })
+    }
   }
 
   getPosts = async () => {
@@ -21,11 +26,14 @@ class Blog extends React.Component {
   }
 
   render() {
-    const { posts } = this.state
+    const { posts, error } = this.state
     return (
       <div>
         <div className='row flex-center'>
-          { posts && posts.map((post, i) => (<BlogPostCard key={i} {...post} />))}
+          { posts
+            ? posts.map((post, i) => (<BlogPostCard key={i} {...post} />))
+            : 'loading...' }
+          { error && 'No Posts'}
         </div>
       </div>
     )
@@ -33,14 +41,16 @@ class Blog extends React.Component {
 }
 
 const BlogPostCard = ({ title, published, description, url }) => {
-  const filename = url.slice(13).slice(0, -3) // assets/posts/ is 13 characters, -3 to remove the .md extension
+  /* assets/posts/ is 13 characters, -3 to remove the .md extension */
+  const filename = url.slice(13).slice(0, -3)
+  const linkUrl = `/blog/posts/${filename}`
   return (
     <div className='card' style={{ width: '20rem', marginBottom: '2rem' }}>
       <div className='card-body'>
         <h4 className='card-title'>{title}</h4>
         <h5 className='card-subtitle'>{published}</h5>
         <p className='card-text'>{description}</p>
-        <Link className='card-link' to={`/blog/posts/${filename}`}>read more</Link>
+        <Link className='card-link' to={linkUrl}>read more</Link>
       </div>
     </div>
   )

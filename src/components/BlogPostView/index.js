@@ -7,17 +7,18 @@ import './blogPostView.css'
 class BlogPostView extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { content: null }
+    this.state = { content: null, error: false }
   }
 
   async componentWillMount() {
-    const path = window.location.hash.slice(1)
-    // path will be something like: /blog/posts/first_blog_post-12112018
-    const [head, rest] = path.split('/').pop().split('-')
-    const content = await this.getContent(`/assets/posts/${head}-${rest}.md`)
-    const title = this.deriveTitle(head)
-    const publishDate = this.derivePublishDate(rest)
-    this.setState({ content, title, publishDate })
+    const { url, title, publishDate } = this.getParams()
+    try {
+      const content = await this.getContent(url)
+      this.setState({ content, title, publishDate })
+    } catch (e) {
+      console.error(e)
+      this.setState({ error: true })
+    }
   }
 
   getContent = async (url) => {
@@ -26,8 +27,20 @@ class BlogPostView extends React.Component {
     return text
   }
 
+  getParams = () => {
+    const path = window.location.hash.slice(1)
+    // path will be something like: /blog/posts/first_blog_post-12112018
+    const [head, tail] = path.split('/').pop().split('-')
+    const url = `/assets/posts/${head}-${tail}.md`
+    const title = this.deriveTitle(head)
+    const publishDate = this.derivePublishDate(tail)
+    return { url, title, publishDate }
+  }
+
   deriveTitle = (titleStr) => {
-    return titleStr.split('_').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
+    return titleStr.split('_')
+      .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+      .join(' ')
   }
 
   derivePublishDate = (dateStr) => {
@@ -38,15 +51,17 @@ class BlogPostView extends React.Component {
   }
 
   render() {
-    const { content, title, publishDate } = this.state
-    console.log(content)
+    const { content, error, ...headerProps } = this.state
     return (
       <React.Fragment>
         <div className='row flex-center'>
-          { content ? <PostHeader title={title} publishDate={publishDate} /> : <h3>Oops something went wrong</h3>}
+          { error && <h3>Oops something went wrong</h3> }
+          { content ? <PostHeader {...headerProps} /> : 'loading...' }
         </div>
         { content &&
-          <div className='post-content' dangerouslySetInnerHTML={{ __html: mdparse(content) }} />}
+          <div
+            className='post-content'
+            dangerouslySetInnerHTML={{ __html: mdparse(content) }} /> }
       </React.Fragment>
     )
   }
