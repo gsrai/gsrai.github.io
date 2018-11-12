@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "title": "First Blog Post",
+      "published": "12/11/2018",
+      "description": "This is my first blog post, lorem ipsum",
+      "url": "assets/posts/first_blog_post-12112018.md"
+    }
+  ]
+}
