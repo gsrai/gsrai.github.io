@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 class Blog extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Blog extends React.Component {
   render() {
     const { posts } = this.state
     return (
-      <div className={'blog-container'}>
+      <div>
         <h2>Blog Posts</h2>
         <div className='row flex-center'>
           { posts && posts.map((post, i) => (<BlogPostCard key={i} {...post} />))}
@@ -33,13 +34,14 @@ class Blog extends React.Component {
 }
 
 const BlogPostCard = ({ title, published, description, url }) => {
+  const filename = url.slice(13).slice(0, -3) // assets/posts/ is 13 characters, -3 to remove the .md extension
   return (
     <div className='card' style={{ width: '20rem', marginBottom: '2rem' }}>
       <div className='card-body'>
         <h4 className='card-title'>{title}</h4>
         <h5 className='card-subtitle'>{published}</h5>
         <p className='card-text'>{description}</p>
-        <a className='card-link' href={url}>read more</a>
+        <Link className='card-link' to={`/blog/posts/${filename}`}>read more</Link>
       </div>
     </div>
   )

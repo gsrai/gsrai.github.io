@@ -1,0 +1,17 @@
+.post-header > h2 {
+  margin: 0;
+}
+
+.post-header > h6 {
+  text-align: center;
+  margin: 2px;
+  color: #0071de;
+}
+
+.post-content {
+  padding-left: 20%;
+  padding-right: 20%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

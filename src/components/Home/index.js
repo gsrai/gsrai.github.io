@@ -10,6 +10,7 @@ import Blog from '../Blog'
 import ErrorBoundary from '../../utils/ErrorBoundary'
 
 import './home.css'
+import BlogPostView from '../BlogPostView'
 
 class Home extends React.Component {
   constructor(props) {
@@ -107,6 +108,7 @@ class Home extends React.Component {
             return (<About {...aboutModel} />)
           }} />
           <Route exact path='/blog' component={Blog} />
+          <Route path='/blog/posts/*' component={BlogPostView} />
           <Footer />
         </ErrorBoundary>
       </div>
