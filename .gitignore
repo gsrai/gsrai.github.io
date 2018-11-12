@@ -1,8 +1,8 @@
 # Custom
-dist/
+dist/*
+!dist/assets
 target
 test/cljs
-dist/js/
 .build
 .repl
 .nrepl-port

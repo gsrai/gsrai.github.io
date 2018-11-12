@@ -9,8 +9,6 @@ as github pages serves the `master` branch.
 
 ### todo ###
 
-- move assets into version control
-- add error handling when fetching
 - add tests :)
 
 ***

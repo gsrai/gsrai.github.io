@@ -8,7 +8,7 @@ export default class About extends React.Component {
     return (
       <div className='row flex-center'>
         <div className='card' style={{ width: '20rem', marginBottom: '2rem' }}>
-          <img src='assets/profilepic.jpeg' alt='profile picture' />
+          <img src='assets/images/profilepic.jpeg' alt='profile picture' />
           <div className='card-body'>
             <div className='row flex-center'>
               <h5>{this.props.name}, {this.props.age}</h5>

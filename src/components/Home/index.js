@@ -25,7 +25,7 @@ class Home extends React.Component {
           {
             title: 'Tab Manager Pro',
             desc: 'Personal project to learn the chrome extension api and solidify my React and Redux knowledge. It is available on the chrome store and the code on github.',
-            imgsrc: 'assets/tabmanagerpro.png',
+            imgsrc: 'assets/images/tabmanagerpro.png',
             links: [
               {
                 href: 'https://github.com/gsrai/tab-manager-pro',
@@ -40,7 +40,7 @@ class Home extends React.Component {
           {
             title: 'Word Envy',
             desc: 'A puzzle game that I created to learn React Native and publish an app on the google play store.',
-            imgsrc: 'assets/wordenvy.jpg',
+            imgsrc: 'assets/images/wordenvy.jpg',
             links: [
               {
                 href: 'https://play.google.com/store/apps/details?id=com.wordenvy',
@@ -51,7 +51,7 @@ class Home extends React.Component {
           {
             title: 'JS game clones',
             desc: 'I made Snake and Pong game clones written in es5 Javascript, I wanted to make games and learn the HTML5 canvas API.',
-            imgsrc: 'assets/pong.png',
+            imgsrc: 'assets/images/pong.png',
             links: [
               {
                 href: 'https://github.com/gsrai/portfolio/tree/master/Pong',
@@ -66,7 +66,7 @@ class Home extends React.Component {
           {
             title: 'Personal Website and Blog',
             desc: 'I used a github site to host my own website which would present a portfolio of my work and a blog written in Javascript and uses React.',
-            imgsrc: 'assets/portfolio.png',
+            imgsrc: 'assets/images/portfolio.png',
             links: [
               {
                 href: 'https://github.com/gsrai/gsrai.github.io',
