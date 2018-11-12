@@ -38,16 +38,12 @@ class Home extends React.Component {
           },
           {
             title: 'Word Envy',
-            desc: 'A puzzle game that I created to learn React Native and publish an app on both the google play store and the apple app store.',
+            desc: 'A puzzle game that I created to learn React Native and publish an app on the google play store.',
             imgsrc: 'assets/wordenvy.jpg',
             links: [
               {
                 href: 'https://play.google.com/store/apps/details?id=com.wordenvy',
                 title: 'Google Play'
-              },
-              {
-                href: 'https://itunes.apple.com/us/app/word-envy/id1266290411',
-                title: 'App Store'
               }
             ]
           },
@@ -88,6 +84,13 @@ class Home extends React.Component {
     }
   }
 
+  scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   render() {
     const { projectsModel, aboutModel } = this.state
     return (
@@ -95,7 +98,7 @@ class Home extends React.Component {
         <ErrorBoundary>
           <Header />
           <div className='to-top'>
-            <a href='#app-root' className='paper-btn margin'>^</a>
+            <button className='paper-btn margin' onClick={this.scrollToTop}>^</button>
           </div>
           <Route exact path='/' render={() => {
             return (<ProjectsContainer projectsModel={projectsModel} />)

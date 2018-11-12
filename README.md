@@ -9,7 +9,7 @@ as github pages serves the `master` branch.
 
 ### todo ###
 
-- use paper css and update about and footer
+- move assets into version control
 - postcss?
 - build blog and use dist/assets/posts to store md blog posts
 
