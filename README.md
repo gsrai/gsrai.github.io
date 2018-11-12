@@ -10,8 +10,8 @@ as github pages serves the `master` branch.
 ### todo ###
 
 - move assets into version control
-- postcss?
-- build blog and use dist/assets/posts to store md blog posts
+- add error handling when fetching
+- add tests :)
 
 ***
 

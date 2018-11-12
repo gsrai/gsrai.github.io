@@ -20,8 +20,8 @@ export default class Header extends React.Component {
         </header>
         <div className='row flex-center'>
           <Link className={this.isActive(activeTab === '')} to='/'>Projects</Link>
-          <Link className={this.isActive(activeTab === 'about')} to='about'>About</Link>
-          <Link className={this.isActive(activeTab === 'blog')} to='blog'>Blog</Link>
+          <Link className={this.isActive(activeTab === 'about')} to='/about'>About</Link>
+          <Link className={this.isActive(activeTab === 'blog')} to='/blog'>Blog</Link>
         </div>
       </React.Fragment>
     )

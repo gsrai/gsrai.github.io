@@ -24,7 +24,6 @@ class Blog extends React.Component {
     const { posts } = this.state
     return (
       <div>
-        <h2>Blog Posts</h2>
         <div className='row flex-center'>
           { posts && posts.map((post, i) => (<BlogPostCard key={i} {...post} />))}
         </div>
