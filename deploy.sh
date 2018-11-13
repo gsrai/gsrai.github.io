@@ -11,7 +11,7 @@ cp -R dist/ .build
 git checkout master
 rm *.js
 rm *.css
-cp -R dist/* .
+cp -R .build/* .
 git add --all
 git commit -m "deployed release candidate"
 git push origin master
