@@ -9,7 +9,7 @@ as github pages serves the `master` branch.
 
 ### todo ###
 
-- add tests :)
+- ~~add tests~~
 
 ***
 

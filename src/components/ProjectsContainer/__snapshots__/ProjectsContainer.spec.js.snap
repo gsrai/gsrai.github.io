@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering component should render correctly 1`] = `
+<main
+  className="main-content"
+>
+  <ProjectTile
+    imgsrc="assets/foo.jpeg"
+    key="0"
+    links={
+      Array [
+        Object {
+          "href": "some/url",
+          "title": "Github",
+        },
+      ]
+    }
+    title="Some Totally Awesome Project"
+  />
+</main>
+`;

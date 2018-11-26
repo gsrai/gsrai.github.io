@@ -40,7 +40,7 @@ class Blog extends React.Component {
   }
 }
 
-const BlogPostCard = ({ title, published, description, url }) => {
+export const BlogPostCard = ({ title, published, description, url }) => {
   /* assets/posts/ is 13 characters, -3 to remove the .md extension */
   const filename = url.slice(13).slice(0, -3)
   const linkUrl = `/blog/posts/${filename}`

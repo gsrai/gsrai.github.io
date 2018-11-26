@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering component should render correctly 1`] = `
+<Fragment>
+  <header
+    className="row flex-center"
+  >
+    <h2>
+      Gagondeep Srai
+    </h2>
+  </header>
+  <div
+    className="row flex-center"
+  >
+    <Link
+      className="paper-btn margin btn-success"
+      replace={false}
+      to="/"
+    >
+      Projects
+    </Link>
+    <Link
+      className="paper-btn margin"
+      replace={false}
+      to="/about"
+    >
+      About
+    </Link>
+    <Link
+      className="paper-btn margin"
+      replace={false}
+      to="/blog"
+    >
+      Blog
+    </Link>
+  </div>
+</Fragment>
+`;

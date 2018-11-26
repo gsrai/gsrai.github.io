@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering component should render correctly 1`] = `
+<div
+  className="footer-container"
+>
+  <hr />
+  <footer
+    className="footer"
+  >
+    © 2018 Gagondeep Srai.
+  </footer>
+</div>
+`;

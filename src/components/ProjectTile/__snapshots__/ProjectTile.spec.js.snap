@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering component should render correctly 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "marginBottom": "2rem",
+      "width": "20rem",
+    }
+  }
+>
+  <img
+    alt="Some Totally Awesome Project"
+    src="assets/foo.jpeg"
+    title="Some Totally Awesome Project"
+  />
+  <div
+    className="card-body"
+  >
+    <h4
+      className="card-title"
+    >
+      Some Totally Awesome Project
+    </h4>
+    <p
+      className="card-text project-desc"
+    >
+      I did some stuff.
+    </p>
+    <div
+      className="project-links"
+    >
+      <a
+        className="paper-btn margin "
+        href="some/url"
+        key="0"
+      >
+        Github
+      </a>
+    </div>
+  </div>
+</div>
+`;

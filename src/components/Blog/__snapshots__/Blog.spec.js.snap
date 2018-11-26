@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering Blog component should render correctly 1`] = `
+<div>
+  <div
+    className="row flex-center"
+  >
+    loading...
+  </div>
+</div>
+`;
+
+exports[`Component Rendering BlogPostCard component should render correctly 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "marginBottom": "2rem",
+      "width": "20rem",
+    }
+  }
+>
+  <div
+    className="card-body"
+  >
+    <h4
+      className="card-title"
+    >
+      why we moved from language x to language y
+    </h4>
+    <h5
+      className="card-subtitle"
+    >
+      22/11/2018
+    </h5>
+    <p
+      className="card-text"
+    >
+      We stopped using language x, now we use language y, you should do the same.
+    </p>
+    <Link
+      className="card-link"
+      replace={false}
+      to="/blog/posts/"
+    >
+      read more
+    </Link>
+  </div>
+</div>
+`;

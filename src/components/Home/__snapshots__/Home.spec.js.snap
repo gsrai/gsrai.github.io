@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering component should render correctly 1`] = `
+<div
+  className="paper"
+>
+  <ErrorBoundary>
+    <Header />
+    <div
+      className="to-top"
+    >
+      <button
+        className="paper-btn margin"
+        onClick={[Function]}
+      >
+        ^
+      </button>
+    </div>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/about"
+      render={[Function]}
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/blog"
+    />
+    <Route
+      component={[Function]}
+      path="/blog/posts/*"
+    />
+    <Footer />
+  </ErrorBoundary>
+</div>
+`;
