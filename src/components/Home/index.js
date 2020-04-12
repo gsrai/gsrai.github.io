@@ -12,12 +12,18 @@ import ErrorBoundary from '../../utils/ErrorBoundary'
 import './home.css'
 import BlogPostView from '../BlogPostView'
 
+function calcAge(dob) {
+	const now = new Date()
+	return (now.getDate() >= dob.getDate() && now.getMonth() >= dob.getMonth())
+		? now.getFullYear() - dob.getFullYear()
+		: now.getFullYear() - dob.getFullYear() - 1
+}
+
 class Home extends React.Component {
   constructor(props) {
     super(props)
-    const now = new Date()
-    const dob = new Date(775699200000)
-    const age = now.getFullYear() - dob.getFullYear()
+    const dob = new Date('31 Jul 1994')
+    const age = calcAge(dob)
 
     this.state = {
       projectsModel: {
